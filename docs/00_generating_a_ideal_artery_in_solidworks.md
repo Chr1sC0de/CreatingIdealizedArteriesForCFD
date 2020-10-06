@@ -17,8 +17,6 @@ files.
 We can now import the files using SolidWorks insert > Curve > curve through xyz
 points
 
-<img src=./images/curve_through_xyz_plane.PNG width="500">
-
 <img src=./images/imported_centerlines.PNG width="500">
 
 ## Step 2: Creating Cylindrical Segments
