@@ -11,24 +11,45 @@ As we will be interested in the
 Import the surface into pointwise and assign an average spacing for any generated
 connectors.
 
-<img src=./images/unstructured_dimension_connector.PNG height="500">
+<img src=./images/unstructured_grid_generation/imported_database.PNG height="500">
+<img src=./images/unstructured_grid_generation/average_connector_length.PNG height="500">
 
 ## Step 2: Create Unstructured Surface Domain
 
 Select the unstructured option from the taskbar and create a domain on the database
 
-<img src=./images/unstructured_domains_on_database_entities.PNG width="500">
+<img src=./images/unstructured_grid_generation/unstructured_domains_on_database_entities.PNG height="500">
 
 ## Step 3: Create Inlet and Outlet Patches
 
 Highlight the connectors on the inlet and outlet patches and then assemble the
 domains.
 
-<img src=./images/unstructured_inlet_outlet_patches.PNG width="500">
+<img src=./images/unstructured_grid_generation/inlet_outlet_patched.PNG height="500">
 
 Select the patches and select Grid > Solve
 
-<img src=./images/unstructured_select_solve_inlet_outlet_patches.PNG width="500">
+<img src=./images/unstructured_grid_generation/inlet_outlet_patch_solve.PNG height="500">
 
 We are more interested in what occurs at the wall of the artery so we will apply a
-T-rex boundary condition to the mesh at the edges
+T-rex boundary condition to the mesh at the edges, making the cells at the wall
+smaller than the cells at the centre of the mesh.
+
+<img
+src=./images/unstructured_grid_generation/inlet_outlet_patch_boundary_conditions.PNG
+height="500">
+
+Now we can assign the growth rate of the t-rex cells at the boundary and the kind
+of cells grown at the boundary.
+
+<img src=./images/unstructured_grid_generation/t_rex_inlet_outlet_patches.PNG
+height="500">
+
+Then we can select the "initialize" and "refine" buttons to generate the t-rex
+meshes at the inlet and outlet patches.
+
+<img
+src=./images/unstructured_grid_generation/initialize_and_refine_inlet_outlet_patches.PNG
+height="500">
+
+## Step 3: Generating the Internal Mesh
