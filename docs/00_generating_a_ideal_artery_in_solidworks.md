@@ -31,7 +31,6 @@ To generate a segment we can define a region along a centreline bounded by two
 planes. To generate the two planes we must define points coincident to our curve.
 This can be done by using Surfaces > Reference Geometry > Point.
 
-<img src=./images/point.PNG width="500">
 
 We can then modify the distance of the point along the centreline. This allows us to
 easily control the length of our artery segment.
@@ -99,20 +98,21 @@ These segments will create edges which can be lofted to generate our T-Junction
 
 To generate the T-Junction use Toolbar > Surfaces > Lofted Surface on adjacent edges
 
-<img src=./images/lofted_surfaces.PNG width="501">
+<img src=./images/lofted_no_constraints.PNG width="501">
 
 Now this doesn't look too realistic so we can apply a tangency to face boundary
 condition
 
-<img src=./images/all_lofted_surfaces.PNG width="501">
+<img src=./images/constrained_lofted_surface.PNG width="501">
 
+Perform the loft for the remaining edges.
+
+<img src=./images/all_lofted_surfaces.PNG width="501">
 
 Finally we can fill the holes using Toolbar > Surfaces > Surface Fill
 
 <img src=./images/surface_fill.PNG width="501">
 
-Note: we can modify the T-Junction by modifying the surface time sketch
+Note: we can modify the T-Junction by modifying the surface trim sketch
 
-<img src=./images/modifiable_sketch.PNG width="501">
-
-Now we can export the file as step file to generate a CFD Mesh with pointwise
+Now we can export the file as STEP file to generate a CFD Mesh with pointwise
