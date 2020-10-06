@@ -6,4 +6,4 @@ Dynamics Studies using [SolidWorks](https://www.solidworks.com/) and
 
 ## Contents
 
-### [Generating a simple template artery in solidworks](./docs/00_generating_a_ideal_artery_in_solidworks.md)
+### [Generating a Simple Template Artery in SolidWorks](./docs/00_generating_a_ideal_artery_in_solidworks.md)
