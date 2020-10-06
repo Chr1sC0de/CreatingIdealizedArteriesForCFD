@@ -1,4 +1,4 @@
-# Generating An Ideal Template Artery Using SolidWorks
+# Generating A Simple Ideal Template Artery Using SolidWorks
 
 In this document we will be showing students how to generate an idealized template
 artery for computational fluid dynamics simulations. The resulting artery is shown
@@ -102,7 +102,12 @@ These segments will create edges which can be lofted to generate our T-Junction
 To generate the T-Junction use Toolbar > Surfaces > Lofted Surface on adjacent edges
 
 <img src=./images/lofted_surfaces.PNG width="501">
+
+Now this doesn't look too realistic so we can apply a tangency to face boundary
+condition
+
 <img src=./images/all_lofted_surfaces.PNG width="501">
+
 
 Finally we can fill the holes using Toolbar > Surfaces > Surface Fill
 
