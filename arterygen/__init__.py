@@ -1,0 +1,1 @@
+from .glyph_template import generate_ideal_bifurcation_glyph

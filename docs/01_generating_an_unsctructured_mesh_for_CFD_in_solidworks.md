@@ -64,13 +64,22 @@ assigning the artery walls to Wall and the inlet and outlet patches to Match.
 src=./images/unstructured_grid_generation/unstructured_block_solve.PNG
 height="500">
 
-Ensure that the block t-rex settings match our domain settings,
+Ensure that the block t-rex settings match our inlet and outlet domain settings,
 
 <img
 src=./images/unstructured_grid_generation/block_t_rex_settings.PNG
 height="500">
 
-finally initialize and refine the mesh.
+Finally initialize and refine the mesh.
 
 ## Exporting the CAE
- Under
+
+Under CAE > Select Solver select OpenFOAM as the solver. Then, under CAE > Set
+Boundary Conditions generate 1 wall and three patch boundary conditions and assign
+the appropriate boundaries.
+
+<img
+src=./images/unstructured_grid_generation/wall_inlet_outlet_boudnary_conditions.PNG
+height="500">
+
+Finally we can go to File > Export CAE to save the OpenFOAM mesh.

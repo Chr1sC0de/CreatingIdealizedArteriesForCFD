@@ -1,0 +1,8 @@
+README.md
+setup.py
+arterygen/__init__.py
+arterygen/glyph_template.py
+arterygen.egg-info/PKG-INFO
+arterygen.egg-info/SOURCES.txt
+arterygen.egg-info/dependency_links.txt
+arterygen.egg-info/top_level.txt

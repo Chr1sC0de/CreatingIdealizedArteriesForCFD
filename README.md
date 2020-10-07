@@ -1,4 +1,4 @@
-# Making Idealized Arteries for Computational Fluid Dynamics Studies
+# Generating Idealized Arteries with SolidWorks, PointWise and Python for CFD in OpenFOAM
 
 Examples outlining how to generate ideal arteries for Computational Fluid
 Dynamics Studies using [SolidWorks](https://www.solidworks.com/) and
@@ -18,3 +18,4 @@ generation process.
     3. Generate the artery templates
     4. Automatically call the pointwise journalled glyphs
     5. Calculate case boundary conditions and construct OpenFoam case
+    6. Send case to cloud and run the CFD with Python

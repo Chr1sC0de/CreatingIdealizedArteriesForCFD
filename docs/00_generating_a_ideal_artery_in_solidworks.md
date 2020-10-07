@@ -115,4 +115,7 @@ Finally we can fill the holes using Toolbar > Surfaces > Surface Fill
 
 Note: we can modify the T-Junction by modifying the surface trim sketch
 
-Now we can export the file as STEP file to generate a CFD Mesh with pointwise
+Now we can export the file as STEP file to generate a CFD Mesh with pointwise.
+
+Note: We only need to generate a STEP file if the version of SolidWorks is
+incompatible with pointwise.
