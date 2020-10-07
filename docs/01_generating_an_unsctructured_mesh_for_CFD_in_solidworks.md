@@ -53,3 +53,24 @@ src=./images/unstructured_grid_generation/initialize_and_refine_inlet_outlet_pat
 height="500">
 
 ## Step 3: Generating the Internal Mesh
+
+Given we have constructed the boundaries of our mesh we can construct the internal
+field. We can initialize a block by the selecting the "Assemble Block" button from
+the toolbar. After the block has been generated, select the block and select Grid >
+Solve. Going into the boundary conditions, create a Wall and Match boundary condition
+assigning the artery walls to Wall and the inlet and outlet patches to Match.
+
+<img
+src=./images/unstructured_grid_generation/unstructured_block_solve.PNG
+height="500">
+
+Ensure that the block t-rex settings match our domain settings,
+
+<img
+src=./images/unstructured_grid_generation/block_t_rex_settings.PNG
+height="500">
+
+finally initialize and refine the mesh.
+
+## Exporting the CAE
+ Under
