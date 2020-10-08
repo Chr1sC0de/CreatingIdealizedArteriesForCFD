@@ -1,1 +1,3 @@
+from . import foam_templates
 from .glyph_template import generate_ideal_bifurcation_glyph
+from .foam_templates import FoamTemplateGenerator, NewtonianSteadyBifurcationGenerator

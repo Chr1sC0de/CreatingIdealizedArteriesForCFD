@@ -14,7 +14,7 @@ generation process.
 ### TBD: Semi-Automation of Reconstruction
 
     1. Via pointwise journalling create an automated script for CFD mesh generation
-    2. Using python we can design an observer pattern program for a folder which contains our solidworks STEP files
+    2. Using python we can design watchdog program for a folder which contains our solidworks STEP files
     3. Generate the artery templates
     4. Automatically call the pointwise journalled glyphs
     5. Calculate case boundary conditions and construct OpenFoam case
