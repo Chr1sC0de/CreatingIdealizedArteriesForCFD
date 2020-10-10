@@ -119,3 +119,16 @@ Now we can export the file as STEP file to generate a CFD Mesh with pointwise.
 
 Note: We only need to generate a STEP file if the version of SolidWorks is
 incompatible with pointwise.
+
+## Step 5: Making the Bifurcation Adjustable
+
+If we want the bifurcation angle to be adjustable we need to rollback the generated
+lofts and surface fills.
+
+Now we go to Insert > Features > Move/Copy select Rotate and
+highlight our bifurcation.
+
+<img src=./images/rotating_bifurcation.PNG width="501">
+
+once this change has been generated we now redo step 4 to complete
+the artery.

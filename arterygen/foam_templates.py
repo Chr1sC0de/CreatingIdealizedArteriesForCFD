@@ -24,16 +24,16 @@ class FoamTemplateGenerator(abc.ABC):
         )
         self.modify()
 
-_newtonian_steady_case = pt.Path(__file__).parent/"OpenFOAM"/"newtonian_steady"
+_newtonian_steady_case = pt.Path(__file__).parent/"OpenFOAM_templates"/"newtonian_steady"
 
 
 class NewtonianSteadyBifurcationGenerator(FoamTemplateGenerator):
 
     case_path = _newtonian_steady_case
 
-    def __init__(self, radius, *args):
-        area = np.pi * radius**2
-        self.inlet_velocity = 1.43*(2*radius**2.55)/area
+    def __init__(self, diameter, *args):
+        area = np.pi * (diameter/2)**2
+        self.inlet_velocity = 1.43*(diameter**2.55)/area
         super().__init__(*args)
 
     def modify(self):
@@ -45,7 +45,7 @@ class NewtonianSteadyBifurcationGenerator(FoamTemplateGenerator):
             "|  \\\\    /   O peration     | Version:  2.1.1                                 |",
             "|   \\\\  /    A nd           | Web:      www.OpenFOAM.org                      |",
             "|    \\\\/     M anipulation  |                                                 |",
-            "\*---------------------------------------------------------------------------*/",
+            "\\*---------------------------------------------------------------------------*/",
             "FoamFile",
             "{",
             "    version     2.0;",
@@ -89,10 +89,3 @@ class NewtonianSteadyBifurcationGenerator(FoamTemplateGenerator):
         ]
         with open(U_file, "w", newline="\n") as f:
             f.write("\n".join(file_text))
-
-
-if __name__ == "__main__":
-    template_generator = NewtonianSteadyBifurcationGenerator(1.55/1000,
-        r"D:\Github\IdealBifurcations\scripts\tests\test_copy")
-    template_generator.construct()
-
