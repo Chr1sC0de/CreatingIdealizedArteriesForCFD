@@ -10,8 +10,6 @@ class FoamTemplateGenerator(abc.ABC):
 
     def __init__(self, target_path: pt.Path):
         self.target_path = pt.Path(target_path)
-        # if self.target_path.exists():
-        #     raise Exception("{target_path} already exists")
 
     @abc.abstractmethod
     def modify(self):

@@ -113,6 +113,10 @@ Finally we can fill the holes using Toolbar > Surfaces > Surface Fill
 
 <img src=./images/surface_fill.PNG width="501">
 
+To ensure that the surfaces are connected and smooth we shall apply the following settings,
+
+<img src=./images/surface_fill_settings.PNG width="501">
+
 Note: we can modify the T-Junction by modifying the surface trim sketch
 
 Now we can export the file as STEP file to generate a CFD Mesh with pointwise.

@@ -1,21 +1,18 @@
 # Generating Idealized Arteries with SolidWorks, PointWise and Python for CFD in OpenFOAM
 
-Examples outlining how to generate ideal arteries for Computational Fluid
-Dynamics Studies using [SolidWorks](https://www.solidworks.com/) and
-[PointWise](https://www.pointwise.com/) as well as semi-automation of the model
-generation process.
+The current repository contains examples and tools necessary for creating a pipeline
+for semi-automatically generating idealised arteries for CFD studies
+and Deep Learning Training using [SolidWorks](https://www.solidworks.com/),
+[PointWise](https://www.pointwise.com/) and python.
 
 ## Contents
 
 ### [Generating a Simple Template Artery in SolidWorks](./docs/00_generating_a_ideal_artery_in_solidworks.md)
 
-### [Creating an unstructured mesh with Pointwise](./docs/01_generating_an_unsctructured_mesh_for_CFD_in_solidworks.md)
+### [Creating an Unstructured Mesh with Pointwise](./docs/01_generating_an_unsctructured_mesh_for_CFD_in_solidworks.md)
 
-### TBD: Semi-Automation of Reconstruction
+### [Creating a Pointwise Glyph and Python Event Handler](./docs/02)
 
-    1. Via pointwise journalling create an automated script for CFD mesh generation
-    2. Using python we can design watchdog program for a folder which contains our solidworks STEP files
-    3. Generate the artery templates
-    4. Automatically call the pointwise journalled glyphs
-    5. Calculate case boundary conditions and construct OpenFoam case
-    6. Send case to cloud and run the CFD with Python
+### [Automatic Conversion of STEP Files to OpenFoam](./docs/02)
+
+### [Automatic Handling of Jobs with Paramiko and the Spartan Super Computer]()
