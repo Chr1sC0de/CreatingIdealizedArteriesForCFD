@@ -41,24 +41,21 @@ class STEPToFoam:
         ):
             self.openfoam_case_constructor(foam_folder)
             # generate the glyph
-            glyph_name = case.parent/"tmp.glyph"
             generate_ideal_bifurcation_glyph_template_1(
                 case,
-                glyph_name,
                 foam_folder/"constant"/"polyMesh",
-                connector_dimension_spacing = 0.2,
-                inlet_domain_wall_spacing   = 0.025,
-                TRexMaximumLayers           = 6,
-                TRexGrowthRate              = 1.1
+                dimension_spacing        = 0.2,
+                wall_spacing             = 0.025,
+                trex_maximum_layers      = 6,
+                trex_growth_rate         = 1.1,
+                inlet_connector_names     = ("con-1", "con-7"),
+                outlet_1_connector_names  = ("con-28", "con-31"),
+                outlet_2_connector_names = ("con-35", "con-37")
             )
-            # now run the glyph to generate the openfoam mesh
-            subprocess.run(f"tclsh.exe {glyph_name}")
-
 
 def make_newtonian_steady_case(foam_folder):
     diameter   = float(foam_folder.name.split("_")[3])/1000
     NewtonianSteadyBifurcationGenerator(diameter, foam_folder).construct()
-
 
 class STEPToFoamNewtonianSteadyFoam(STEPToFoam):
     def __init__(self, target_folder: pt.Path):
