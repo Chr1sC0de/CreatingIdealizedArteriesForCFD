@@ -13,8 +13,6 @@ and Deep Learning Training using [SolidWorks](https://www.solidworks.com/),
 
 ### [Connecting to an Active Pointwise Port and Programmatically Constructing an Unstructured Mesh](./docs/02_convert_step_to_openfoam_with_pointwise_python_api.ipynb)
 
-### [Creating a Pointwise Glyph and Python Event Handler](./docs/02)
-
 ### [Automatic Conversion of STEP Files to OpenFoam](./docs/02)
 
 ### [Automatic Handling of Jobs with Paramiko and the Spartan Super Computer]()
