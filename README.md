@@ -17,6 +17,4 @@ and Deep Learning Training using [SolidWorks](https://www.solidworks.com/),
 
 ### [Automatic Conversion of STEP Files to OpenFoam](./docs/04_automatically_convert_step_files_to_openfoam_with_an_observer.ipynb)
 
-### []
-
 ### [Automatic Handling of Jobs with Paramiko and the Spartan Super Computer (TBD)]()
