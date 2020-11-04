@@ -34,7 +34,6 @@ def generate_ideal_bifurcation_glyph_template_1(
 
     input_filename   = pt.Path(input_filename)
     output_directory = pt.Path(output_directory)
-
     assert input_filename.exists(), "The input file does not exist"
     assert output_directory.exists(), "The output directory does not exist "
     if echo_callback is None:

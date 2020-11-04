@@ -15,6 +15,8 @@ and Deep Learning Training using [SolidWorks](https://www.solidworks.com/),
 
 ### [Programmatically Creating OpenFoam Cases From a Template](./docs/03_programatically_creating_openfoam_cases_from_a_template.ipynb)
 
-### [Automatic Conversion of STEP Files to OpenFoam](./docs/02)
+### [Automatic Conversion of STEP Files to OpenFoam](./docs/04_automatically_convert_step_files_to_openfoam_with_an_observer.ipynb)
 
-### [Automatic Handling of Jobs with Paramiko and the Spartan Super Computer]()
+### []
+
+### [Automatic Handling of Jobs with Paramiko and the Spartan Super Computer (TBD)]()

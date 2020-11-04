@@ -13,24 +13,24 @@ FoamFile
     {
         type patch;
         nFaces 750;
-        startFace 873001;
+        startFace 871889;
     }
     OUTLET-1
     {
         type patch;
-        nFaces 232;
-        startFace 873751;
+        nFaces 220;
+        startFace 872639;
     }
     OUTLET-2
     {
         type patch;
         nFaces 282;
-        startFace 873983;
+        startFace 872859;
     }
     WALL
     {
         type wall;
         nFaces 33676;
-        startFace 874265;
+        startFace 873141;
     }
 )
