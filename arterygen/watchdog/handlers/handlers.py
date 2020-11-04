@@ -4,6 +4,7 @@ from collections import OrderedDict
 import subprocess
 import re
 import pandas as pd
+import shutil
 try:
     from ...glyph_template import generate_ideal_bifurcation_glyph_template_1
     from ...foam_templates import NewtonianSteadyBifurcationGenerator
@@ -32,18 +33,18 @@ class STEPToFoam:
     def __call__(self, case: pt.Path):
 
         # generate the openfoam case
-        foam_folder = self.target_folder/case.stem
+        self.foam_folder = self.target_folder/case.stem
         if not all(
             [
-                (foam_folder/"constant/polyMesh"/item).exists()
+                (self.foam_folder/"constant/polyMesh"/item).exists()
                     for item in self.mesh_files
             ]
         ):
-            self.openfoam_case_constructor(foam_folder)
-            # generate the glyph
+            self.openfoam_case_constructor(self.foam_folder)
+            # generate the case
             generate_ideal_bifurcation_glyph_template_1(
                 case,
-                foam_folder/"constant"/"polyMesh",
+                self.foam_folder/"constant"/"polyMesh",
                 dimension_spacing        = 0.2,
                 wall_spacing             = 0.025,
                 trex_maximum_layers      = 6,
@@ -52,6 +53,9 @@ class STEPToFoam:
                 outlet_1_connector_names  = ("con-28", "con-31"),
                 outlet_2_connector_names = ("con-35", "con-37")
             )
+    def clean(self):
+        if self.foam_folder.exists():
+            shutil.rmtree(self.foam_folder)
 
 def make_newtonian_steady_case(foam_folder):
     diameter   = float(foam_folder.name.split("_")[3])/1000

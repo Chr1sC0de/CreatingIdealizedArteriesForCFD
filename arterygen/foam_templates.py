@@ -3,6 +3,7 @@ import abc
 import distutils.dir_util
 import numpy as np
 
+_newtonian_steady_case = pt.Path(__file__).parent/"OpenFOAM_templates"/"newtonian_steady"
 
 class FoamTemplateGenerator(abc.ABC):
 
@@ -21,9 +22,6 @@ class FoamTemplateGenerator(abc.ABC):
             self.target_path.absolute().as_posix()
         )
         self.modify()
-
-_newtonian_steady_case = pt.Path(__file__).parent/"OpenFOAM_templates"/"newtonian_steady"
-
 
 class NewtonianSteadyBifurcationGenerator(FoamTemplateGenerator):
 

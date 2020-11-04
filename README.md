@@ -13,6 +13,8 @@ and Deep Learning Training using [SolidWorks](https://www.solidworks.com/),
 
 ### [Connecting to an Active Pointwise Port and Programmatically Constructing an Unstructured Mesh](./docs/02_convert_step_to_openfoam_with_pointwise_python_api.ipynb)
 
+### [Programmatically Creating OpenFoam Cases From a Template](./docs/03_programatically_creating_openfoam_cases_from_a_template.ipynb)
+
 ### [Automatic Conversion of STEP Files to OpenFoam](./docs/02)
 
 ### [Automatic Handling of Jobs with Paramiko and the Spartan Super Computer]()
