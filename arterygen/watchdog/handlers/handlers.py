@@ -28,6 +28,7 @@ class STEPToFoam:
 
     def __init__(self, target_folder: pt.Path, openfoam_case_constructor):
         self.target_folder = target_folder
+        # case constructor has the form function(filename, polymesh_folder_target)
         self.openfoam_case_constructor = openfoam_case_constructor
 
     def __call__(self, case: pt.Path):

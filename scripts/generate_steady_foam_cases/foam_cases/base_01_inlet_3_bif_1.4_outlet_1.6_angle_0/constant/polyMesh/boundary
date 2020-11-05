@@ -15,13 +15,13 @@ FoamFile
         nFaces 750;
         startFace 871889;
     }
-    OUTLET-1
+    OUTLET_1
     {
         type patch;
         nFaces 220;
         startFace 872639;
     }
-    OUTLET-2
+    OUTLET_2
     {
         type patch;
         nFaces 282;

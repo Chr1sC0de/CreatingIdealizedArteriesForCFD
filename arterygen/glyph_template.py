@@ -162,11 +162,11 @@ def generate_ideal_bifurcation_glyph_template_1(
     inlet_bc.setPhysicalType("-usage", "CAE", "patch")
 
     outlet_1_bc = pw.BoundaryCondition.create()
-    outlet_1_bc.setName("OUTLET-1")
+    outlet_1_bc.setName("OUTLET_1")
     outlet_1_bc.setPhysicalType("-usage", "CAE", "patch")
 
     outlet_2_bc = pw.BoundaryCondition.create()
-    outlet_2_bc.setName("OUTLET-2")
+    outlet_2_bc.setName("OUTLET_2")
     outlet_2_bc.setPhysicalType("-usage", "CAE", "patch")
 
     # assign the correct domains to the boundary conditions
