@@ -12,6 +12,8 @@ except:
     from arterygen.glyph_template import generate_ideal_bifurcation_glyph_template_1
     from arterygen.foam_templates import NewtonianSteadyBifurcationGenerator
 
+import logging
+import time
 
 class STEPToFoam:
     '''
@@ -26,34 +28,43 @@ class STEPToFoam:
             "faceZones", "neighbour", "owner", "points"
     ]
 
+    dimension_spacing        = 0.25,
+    wall_spacing             = 0.25/8,
+    trex_maximum_layers      = 6,
+    trex_growth_rate         = 1.1,
+
     def __init__(self, target_folder: pt.Path, openfoam_case_constructor):
         self.target_folder = target_folder
         # case constructor has the form function(filename, polymesh_folder_target)
         self.openfoam_case_constructor = openfoam_case_constructor
 
-    def __call__(self, case: pt.Path):
+    def __call__(self, case: pt.Path, rename=None):
 
         # generate the openfoam case
         self.foam_folder = self.target_folder/case.stem
+        self.openfoam_case_constructor(self.foam_folder)
+        # give the case constructor tome time to create the folder
+        time.sleep(5)
         if not all(
             [
                 (self.foam_folder/"constant/polyMesh"/item).exists()
                     for item in self.mesh_files
             ]
         ):
-            self.openfoam_case_constructor(self.foam_folder)
             # generate the case
             generate_ideal_bifurcation_glyph_template_1(
                 case,
                 self.foam_folder/"constant"/"polyMesh",
-                dimension_spacing        = 0.2,
-                wall_spacing             = 0.025,
-                trex_maximum_layers      = 6,
-                trex_growth_rate         = 1.1,
+                dimension_spacing        = self.dimension_spacing,
+                wall_spacing             = self.wall_spacing,
+                trex_maximum_layers      = self.trex_maximum_layers,
+                trex_growth_rate         = self.trex_growth_rate,
                 inlet_connector_names     = ("con-1", "con-7"),
                 outlet_1_connector_names  = ("con-28", "con-31"),
                 outlet_2_connector_names = ("con-35", "con-37")
             )
+        return self.foam_folder
+
     def clean(self):
         if self.foam_folder.exists():
             shutil.rmtree(self.foam_folder)

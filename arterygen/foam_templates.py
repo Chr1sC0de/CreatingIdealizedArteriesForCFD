@@ -9,17 +9,21 @@ class FoamTemplateGenerator(abc.ABC):
 
     case_path = None
 
-    def __init__(self, target_path: pt.Path):
+    def __init__(self,target_path: pt.Path, max_retries=10):
         self.target_path = pt.Path(target_path)
+        self.max_retries = max_retries
 
     @abc.abstractmethod
     def modify(self):
         NotImplemented
 
-    def construct(self):
+    def construct(self, retries=0):
+        # due to a bug in copy_tree we need to clear the cache everytime we run it
+        # just in case we delete a folder and want to remake it
+        distutils.dir_util._path_created = {}
         distutils.dir_util.copy_tree(
             self.case_path.absolute().as_posix(),
-            self.target_path.absolute().as_posix()
+            self.target_path.absolute().as_posix(),
         )
         self.modify()
 

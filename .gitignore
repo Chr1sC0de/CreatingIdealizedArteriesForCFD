@@ -2,3 +2,5 @@ _env/
 openFoamMeshes/
 solidworksMeshes/
 scripts/
+docs/example_openfoam_case/constant/polyMesh
+docs/config.py

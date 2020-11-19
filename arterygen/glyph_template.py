@@ -1,7 +1,6 @@
 from pointwise import GlyphClient
 import pathlib as pt
 from typing import List
-
 def get_all_entities(api_object, prefix, counter=1):
     entities = []
     while True:

@@ -19,4 +19,4 @@ and Deep Learning Training using [SolidWorks](https://www.solidworks.com/),
 
 ### [Using Solidworks Configurations and VBA To Programmatically Generate Examples](./docs/05_using_solidworks_configurations_and_vba_to_programatically_generate_examples.md)
 
-### [Automatic Handling of Jobs with Python and the Gadi Super Computer (TBD)]()
+### [Automatic Handling of Jobs with Python and the Gadi Super Computer](./docs/06_automatic_handling_of_super_computer_jobs_with_python.ipynb)
