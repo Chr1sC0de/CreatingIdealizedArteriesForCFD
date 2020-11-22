@@ -1,10 +1,8 @@
 # Generating Idealized Arteries with SolidWorks, PointWise and Python for CFD in OpenFOAM
 
 The current repository contains examples and tools for creating a pipeline
-for semi-automatically generating idealised arteries for CFD studies
-and Deep Learning Training using [SolidWorks](https://www.solidworks.com/),
-[PointWise](https://www.pointwise.com/) and Python.
-
+for semi-automatically generating idealised arteries from [SolidWorks](https://www.solidworks.com/) models to CFD on
+the super computer using python and [PointWise](https://www.pointwise.com/).
 
 ![](./docs/images/open_foam_case.PNG)
 
