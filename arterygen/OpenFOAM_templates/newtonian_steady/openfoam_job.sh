@@ -9,12 +9,16 @@
 # Unload modules.
 module rm openmpi intel-cc intel-fc
 
-# Load modules.
-module load OpenFOAM/7
+# Load modules and set the values.
+. /scratch/m45/cm5094/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
+module load openmpi/4.0.2
+
 # decompose the case into the desired number of cores
 decomposePar
-mpirun simpleFoam -parallel > $PBS_JOBID.log
+mpirun ericNonNewtonianImplicitFoam -parallel > $PBS_JOBID.log
 # reconstruct the case
 reconstructPar
 # now remove the processor folders to save space
 rm -rf processor*
+# create a job
+touch completed.tmp
