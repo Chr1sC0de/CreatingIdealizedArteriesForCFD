@@ -1,7 +1,7 @@
 absl-py==0.9.0
 alabaster==0.7.12
 appdirs==1.4.3
--e git+https://github.com/Chr1sC0de/Ideal-Artery-Generation.git@907289b9487b8477699a3181799fd400b257a8b1#egg=arterygen
+-e git+https://github.com/Chr1sC0de/Ideal-Artery-Generation.git@e636f971629a9bbe27dfd3172de341bdfacdf1fd#egg=arterygen
 astroid==2.3.3
 attrs==19.3.0
 Babel==2.8.0
@@ -41,11 +41,14 @@ isort==4.3.21
 jedi==0.16.0
 Jinja2==2.11.1
 joblib==0.14.1
+json5==0.9.5
 jsonschema==3.2.0
 jupyter==1.0.0
 jupyter-client==5.3.4
 jupyter-console==6.1.0
 jupyter-core==4.6.2
+jupyterlab==2.2.9
+jupyterlab-server==1.2.0
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.3
 llvmlite==0.31.0

@@ -8,7 +8,9 @@ the super computer using python and [PointWise](https://www.pointwise.com/).
 
 ## Contents
 
-### [Generating a Simple Template Artery in SolidWorks](./docs/00_generating_a_ideal_artery_in_solidworks.md)
+The following contents show how to generate your own pipeline from scratch
+
+### [Generating a Simple Template Artery with a Bifurcation in SolidWorks](./docs/00_generating_a_ideal_artery_in_solidworks.md)
 
 ![](./docs/images/solidworks_template_artery.PNG)
 
@@ -25,3 +27,7 @@ the super computer using python and [PointWise](https://www.pointwise.com/).
 ### [Using Solidworks Configurations and VBA To Programmatically Generate Cases](./docs/05_using_solidworks_configurations_and_vba_to_programatically_generate_examples.md)
 
 ### [Automatic Handling of OpenFoam Jobs on the Gadi Super Computer with Python](./docs/06_automatic_handling_of_super_computer_jobs_with_python.ipynb)
+
+## Examples
+
+The examples folder contains scripts for automating the process for many cases.

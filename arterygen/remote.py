@@ -36,7 +36,7 @@ class Copy_a_to_b_decorator:
 
 class Client:
 
-    def __init__(self, host, username, password, port=22, retry_limit=10):
+    def __init__(self, host, username, password, port=22, retry_limit=100):
 
         self.port        = port
         self.host        = host
@@ -69,11 +69,11 @@ class Client:
         self.transport.close()
 
     @Copy_a_to_b_decorator("Local", "Remote")
-    def copy_local_to_remote(self, local_folder, remote_folder, retries=0):
+    def copy_local_to_remote(self, local_folder, remote_folder, retries=100):
         self.scp.put(local_folder.as_posix(), remote_path=remote_folder.as_posix(),recursive=True)
 
     @Copy_a_to_b_decorator("Remote", "Local")
-    def copy_remote_to_local(self, remote_folder, local_folder, retries=0):
+    def copy_remote_to_local(self, remote_folder, local_folder, retries=100):
         self.scp.get(remote_folder.as_posix(), local_path=local_folder.as_posix(), recursive=True)
 
     # utiltiy function for deleting a remote directory

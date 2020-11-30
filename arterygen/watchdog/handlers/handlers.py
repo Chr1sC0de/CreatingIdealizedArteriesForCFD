@@ -15,6 +15,8 @@ except:
 import logging
 import time
 
+from functools import partial
+
 class STEPToFoam:
     '''
         Handler class,
@@ -32,6 +34,14 @@ class STEPToFoam:
     wall_spacing             = 0.25/8,
     trex_maximum_layers      = 6,
     trex_growth_rate         = 1.1,
+
+    template = partial(
+        generate_ideal_bifurcation_glyph_template_1,
+        inlet_connector_names    = ("con-1", "con-7"),
+        outlet_1_connector_names = ("con-28", "con-31"),
+        outlet_2_connector_names = ("con-35", "con-37")
+    )
+
 
     def __init__(self, target_folder: pt.Path, openfoam_case_constructor):
         self.target_folder = target_folder
@@ -52,16 +62,13 @@ class STEPToFoam:
             ]
         ):
             # generate the case
-            generate_ideal_bifurcation_glyph_template_1(
+            self.template(
                 case,
                 self.foam_folder/"constant"/"polyMesh",
                 dimension_spacing        = self.dimension_spacing,
                 wall_spacing             = self.wall_spacing,
                 trex_maximum_layers      = self.trex_maximum_layers,
                 trex_growth_rate         = self.trex_growth_rate,
-                inlet_connector_names     = ("con-1", "con-7"),
-                outlet_1_connector_names  = ("con-28", "con-31"),
-                outlet_2_connector_names = ("con-35", "con-37")
             )
         return self.foam_folder
 

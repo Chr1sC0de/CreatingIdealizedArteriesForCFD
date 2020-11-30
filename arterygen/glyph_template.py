@@ -1,6 +1,8 @@
 from pointwise import GlyphClient
 import pathlib as pt
 from typing import List
+from pointwise.glyphapi import Transform
+
 def get_all_entities(api_object, prefix, counter=1):
     entities = []
     while True:
@@ -36,13 +38,13 @@ def generate_ideal_bifurcation_glyph_template_1(
     assert input_filename.exists(), "The input file does not exist"
     assert output_directory.exists(), "The output directory does not exist "
     if echo_callback is None:
-        glf = GlyphClient(port=0)
+        glf = GlyphClient(port=port)
     elif echo_callback is "default":
         print("Info: processing", input_filename)
-        glf = GlyphClient(port=0, callback=echo)
+        glf = GlyphClient(port=port, callback=echo)
     else:
         print("Info: processing", input_filename)
-        glf = GlyphClient(port=0, callback=echo_callback)
+        glf = GlyphClient(port=port, callback=echo_callback)
 
     pw  = glf.get_glyphapi()
 
@@ -127,13 +129,14 @@ def generate_ideal_bifurcation_glyph_template_1(
     # set the boundary conditions of the block and then solve
     with pw.Application.begin("UnstructuredSolver", block) as block_solver:
         # get the necessary boundary conditions
-        wall_trex_condition = pw.TRexCondition.getByName("WALL")
-        match_trex_condition     = pw.TRexCondition.create()
+        wall_trex_condition  = pw.TRexCondition.getByName("WALL")
+        match_trex_condition = pw.TRexCondition.create()
         match_trex_condition.setName("MATCH")
+        match_trex_condition.setType("Match")
 
         # create the list required to be placed into the WALL bc
         block_wall_list = [ [block, dom, "Opposite"]  for dom in wall_domains ]
-        # create the list required to be placed into the MATCH bc
+        # create the list required to be placed into the Adjacent bc
         block_match_list = [ [block, dom, "Same"]  for dom in inlet_outlet_domains ]
 
         # finally apply the correct t-rex condition to domains
@@ -146,6 +149,7 @@ def generate_ideal_bifurcation_glyph_template_1(
         block_solver.setStopWhenFullLayersNotMet("true")
         block_solver.setAllowIncomplete("true")
         block_solver.run("Initialize")
+        block_solver.run("Refine")
         block_solver.run("Refine")
 
     # set the CAE solver
@@ -175,6 +179,14 @@ def generate_ideal_bifurcation_glyph_template_1(
     inlet_bc.apply([block, inlet_outlet_domains[0]])
     outlet_1_bc.apply([block, inlet_outlet_domains[1]])
     outlet_2_bc.apply([block, inlet_outlet_domains[2]])
+
+    # ensure scale the model to ensure that the model size is in mm
+    with pw.Application.begin("Modify", [block]) as modifier:
+        scaling  = Transform.scaling((0.001, 0.001, 0.001), anchor=(0,0,0))
+        entities = modifier.getEntities()
+        col      = pw.Collection()
+        col.set(entities)
+        pw.Entity.transform(scaling, col.list())
 
     with pw.Application.begin("CaeExport") as cae_exporter:
         cae_exporter.addAllEntities()
