@@ -12,7 +12,11 @@ The following contents show how to generate your own pipeline from scratch
 
 ### Generating Arteries Without a Bifurcation
 
-### Creating a Statistical Shape Model
+#### [Creating a Statistical Shape Model](./docs/no_bifurcation/00_creating_a_statistical_shape_model.ipynb)
+
+#### [Creating a Structured Mesh using Pointwise and Python](./docs/bifurcation/../no_bifurcation/01_creating_structured_meshes_in_pointwise.ipynb)
+
+![](./docs/no_bifurcation/images/final_mesh.PNG)
 
 ### Generating Arteries with a Bifurcation
 
