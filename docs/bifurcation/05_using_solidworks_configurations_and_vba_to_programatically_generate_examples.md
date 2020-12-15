@@ -3,7 +3,6 @@
 We can quickly create new examples in Solidworks by settings up a table of
 configurations and exporting them programmatically with VBA.
 
-
 ## Creating a Design Table and Configurations in Solidworks
 
 ![](./images/solidworks_vba_and_configurations/configurations.PNG)

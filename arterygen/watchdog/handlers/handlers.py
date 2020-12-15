@@ -54,6 +54,7 @@ class STEPToFoam:
         self.foam_folder = self.target_folder/case.stem
         self.openfoam_case_constructor(self.foam_folder)
         # give the case constructor tome time to create the folder
+        # if time is not given may have some errors
         time.sleep(5)
         if not all(
             [

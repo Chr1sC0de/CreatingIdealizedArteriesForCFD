@@ -1,10 +1,12 @@
 # Generating A Simple Ideal Template Artery Using SolidWorks
 
+
 In this document we will be showing students how to generate an idealized template
 artery for computational fluid dynamics simulations. The resulting artery is shown
 bellow.
 
 <img src=./images/solidworks_template_artery.PNG width="500">
+
 
 ## Step 1: Importing the Main and Bifurcation Centerlines
 

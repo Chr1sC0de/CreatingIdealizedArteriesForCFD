@@ -1,7 +1,7 @@
 #!/bin/bash
-#PBS -l ncpus=32
-#PBS -l mem=64GB
-#PBS -l jobfs=400GB
+#PBS -l ncpus=8
+#PBS -l mem=20GB
+#PBS -l jobfs=1GB
 #PBS -l walltime=10:00:00
 #PBS -l software=openFOAM
 #PBS -l wd
